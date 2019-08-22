@@ -1,0 +1,25 @@
+// Project specific
+build/*.nupkg
+
+[Pp]roject.lock.json
+.vs/
+artifacts/
+/*.sdf
+/*.VC.opendb
+
+[Bb]in/
+[Oo]bj/
+**/**/[Dd]ebug
+**/x86/Debug
+**/x86/Release
+**/x64/Debug
+**/x64/Release
+
+*.pdb
+*.winmd
+*.user
+/tools/local/
+*.Compiler.cs
+*.NotImplemented.cs
+AppPackages/
+BenchmarkDotNet.Artifacts/

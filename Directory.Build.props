@@ -1,0 +1,5 @@
+﻿<Project ToolsVersion="15.0">
+	<Import
+		Project="$(MSBuildThisFileDirectory)\build\Version.props"
+		Condition="Exists('$(MSBuildThisFileDirectory)\build\Version.props')"/>
+</Project>

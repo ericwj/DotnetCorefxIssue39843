@@ -1,0 +1,21 @@
+.sln text=auto eol=crlf
+.xproj text=auto eol=crlf
+
+.cmd text=auto eol=crlf
+.asm text=auto eol=crlf
+.inc text=auto eol=crlf
+.cs text=auto diff=csharp eol=crlf
+
+.config text=auto
+.Config text=auto
+
+.json text=auto
+.txt text=auto
+.user text=auto
+.xml text=auto
+.resx text=auto
+
+.com binary
+.dll binary
+.pdb binary
+.exe binary
