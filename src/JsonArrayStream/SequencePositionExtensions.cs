@@ -6,7 +6,7 @@ namespace JsonArrayStream
 	{
 		public static SequencePosition Add(this SequencePosition x, int y)
 			=> new SequencePosition(x.GetObject(), x.GetInteger() + y);
-		public static SequencePosition? Min(SequencePosition? x, SequencePosition? y) => 
+		public static SequencePosition? Min(SequencePosition? x, SequencePosition? y) =>
 			x is null && y is null ? null :
 			x is null ? y :
 			y is null ? x :

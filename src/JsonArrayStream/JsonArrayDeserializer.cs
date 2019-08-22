@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 
 namespace JsonArrayStream
 {
-	public static class JsonArrayDeserializer {
+	public static class JsonArrayDeserializer
+	{
 		public static async IAsyncEnumerable<T> ReadArray<T>(Stream stream, JsonSerializerOptions options = null, [EnumeratorCancellation] CancellationToken token = default) {
 			options ??= new JsonSerializerOptions {
 				AllowTrailingCommas = true,
@@ -26,7 +27,7 @@ namespace JsonArrayStream
 			}
 			await writing;
 		}
-			
+
 		private static async Task FillPipeAsync(Stream stream, PipeWriter writer, CancellationToken token = default) {
 			const int MinimumBufferSize = 512;
 			Exception exception = null;
@@ -45,7 +46,7 @@ namespace JsonArrayStream
 			}
 			writer.Complete(exception);
 		}
-		static async IAsyncEnumerable<T> ReadPipeAsync<T>(PipeReader reader, JsonSerializerOptions options = null, [EnumeratorCancellation] CancellationToken token = default) {			
+		static async IAsyncEnumerable<T> ReadPipeAsync<T>(PipeReader reader, JsonSerializerOptions options = null, [EnumeratorCancellation] CancellationToken token = default) {
 			while (true) {
 			NextObject:
 				var result = await reader.ReadAsync(token);
@@ -90,7 +91,7 @@ namespace JsonArrayStream
 				AllowTrailingCommas = options.AllowTrailingCommas,
 				CommentHandling = options.ReadCommentHandling,
 				MaxDepth = options.MaxDepth
-			});			
+			});
 #if DEBUG
 			var temp = Encoding.UTF8.GetString(bytes.ToArray());
 #endif
@@ -105,5 +106,5 @@ namespace JsonArrayStream
 				return false;
 			}
 		}
-    }
+	}
 }

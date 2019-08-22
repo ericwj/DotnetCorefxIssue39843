@@ -7,8 +7,8 @@ using Xunit;
 
 namespace JsonArrayStream
 {
-    public class UnitTest1
-    {
+	public class UnitTest1
+	{
 		private const string JsonUnicode = @"
 [
 	{ ""Value"": 1 },
@@ -23,13 +23,12 @@ namespace JsonArrayStream
 			public int Value { get; set; }
 		}
 
-        [Fact]
-        public async Task Test1()
-        {
+		[Fact]
+		public async Task Test1() {
 			using var stream = CreateStream();
 			await foreach (var item in JsonArrayDeserializer.ReadArray<Typed>(stream)) {
 				Debug.WriteLine($"Value = {item?.Value.ToString() ?? "(null)"}");
 			}
-        }
-    }
+		}
+	}
 }
